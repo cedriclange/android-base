@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.lemondropsarl.base"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$v.kotlin"
+    implementation "androidx.appcompat:appcompat:$v.appcompat"
+    implementation "androidx.core:core-ktx:$v.core_ktx"
+    implementation "androidx.constraintlayout:constraintlayout:$v.constraintlayout"
+    implementation "com.google.android.material:material:$v.material"
+    implementation "androidx.lifecycle:lifecycle-extensions:$v.lifecycle"
+    kapt "androidx.lifecycle:lifecycle-compiler:$v.lifecycle"
+    implementation "androidx.paging:paging-runtime-ktx:$v.paging"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0-rc02'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.0.0-rc02'
+
+    implementation "de.hdodenhof:circleimageview:$v.circleimage"
+
+    //dagger
+    implementation "com.google.dagger:dagger:$v.dagger"
+    implementation "com.google.dagger:dagger-android:$v.dagger"
+    implementation "com.google.dagger:dagger-android-support:$v.dagger"
+    kapt "com.google.dagger:dagger-compiler:$v.dagger"
+    kapt "com.google.dagger:dagger-android-processor:$v.dagger"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
