@@ -1,7 +1,6 @@
 version: '1.0'
 stages:
   - prepare
-  - test
   - build
 steps:
   main_clone:
@@ -11,13 +10,6 @@ steps:
     repo: 'https://github.com/cedriclange/android-base.git '
     revision: master
     git: github
-  TestIt:
-    title: Running Tests
-    stage: test
-    image: nextcloudci/android:android-48
-    commands:
-     - chmod +x ./gradlew
-     - ./gradlew test --no-daemon --gradle-user-home=/codefresh/volume/.gradle
   BuildIt:
     title: Packaging Android App
     stage: build
