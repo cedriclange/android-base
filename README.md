@@ -1,5 +1,7 @@
 # android-base
 
+[![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/cedriclange/default%2Fandroid?key=eyJhbGciOiJIUzI1NiJ9.NWUxNmZiNDY5ZWM2Y2ZjMDU3YzIzYjU3.53Zj9B0En_BeOJ56fvYjTyKAb49D7K6FYBG4fJEU6Yg&type=cf-1)]( https%3A%2F%2Fg.codefresh.io%2Fpipelines%2Fandroid%2Fbuilds%3Ffilter%3Dtrigger%3Abuild~Build%3Bpipeline%3A5e16fd7b7ab3a747942ee0da~android)
+
 ## What is Android Base?
 
 We want to develop beautiful application and be productive, instead of having to waste your time
