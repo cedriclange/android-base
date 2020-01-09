@@ -1,18 +1,19 @@
 version: '1.0'
 stages:
-  - prepare
-  - build
+  - "clone"
+  - "build"
 steps:
   main_clone:
-    title: Cloning main repository...
-    stage: prepare
-    type: git-clone
-    repo: 'https://github.com/cedriclange/android-base.git '
-    revision: master
-    git: github
+    title: "Cloning main repository..."
+    stage: "clone"
+    type: "git-clone"
+    repo: "cedriclange/android-base"
+    revision: "${{CF_BRANCH}}"
+    git: "github"
   BuildIt:
-    title: Packaging Android App
-    stage: build
-    image: nextcloudci/android:android-48
+    title: "Packaging Android App"
+    stage: "build"
+    type: "build"
+    image: "nextcloudci/android:android-48"
     commands:
      - ./gradlew build  --no-daemon --gradle-user-home=/codefresh/volume/.gradle
